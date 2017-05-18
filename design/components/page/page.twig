@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen">
+</head>
+
+<body>
+    <div class="header">
+        {% block header %}
+
+        {% endblock %}
+    </div>
+    <div class="body">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

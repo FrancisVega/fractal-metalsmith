@@ -1,0 +1,7 @@
+node_modules/
+build/
+.DS_Store
+src/public/js-dist
+src/public/js-es6
+src/public/css/main.css
+npm-debug.log
