@@ -1,9 +1,7 @@
-{%
-    include '../design/components/card/card.twig'
-    with { title: title, desc: desc } only
-%}
+{% include '../design/components/hero/hero.twig' with { title: hero.title } only %}
+{% include '../design/components/card/card.twig' with { title: title, desc: desc } only %}
+{% include '../design/components/card/card.twig' with { title: module.title, desc: module.desc } only %}
 
-{%
-    include '../design/components/card/card.twig'
-    with { title: module.title, desc: module.desc } only
-%}
+<h1> {{ intro.title }} </h1>
+<h2> {{ intro.subtitle }} </h2>
+<p> {{ intro.text }} </p>
