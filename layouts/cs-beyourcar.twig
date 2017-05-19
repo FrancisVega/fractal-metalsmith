@@ -1,0 +1,9 @@
+{%
+    include '../design/components/card/card.twig'
+    with { title: title, desc: desc } only
+%}
+
+{%
+    include '../design/components/card/card.twig'
+    with { title: module.title, desc: module.desc } only
+%}
