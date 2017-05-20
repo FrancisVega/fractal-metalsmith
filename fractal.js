@@ -18,19 +18,19 @@ fractal.components.set('ext', '.twig');
 /*
  * Give your project a title.
  */
-fractal.set('project.title', 'micahgodbolt.com');
+fractal.set('project.title', 'Foo');
 
 /*
  * Tell Fractal where to look for components.
  */
-fractal.components.set('path', path.join(__dirname, 'design/components'));
+fractal.components.set('path', path.join(__dirname, 'fractal/components'));
 
 /*
  * Tell Fractal where to look for documentation pages.
  */
-fractal.docs.set('path', path.join(__dirname, 'design/docs'));
+fractal.docs.set('path', path.join(__dirname, 'fractal/docs'));
 
 /*
  * Tell the Fractal web preview plugin where to look for static assets.
  */
-fractal.web.set('static.path', path.join(__dirname, 'design/public'));
+fractal.web.set('static.path', path.join(__dirname, 'fractal/public'));

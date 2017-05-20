@@ -7,8 +7,8 @@ var twig        = require('metalsmith-twig');
 
 Metalsmith(__dirname)
   .metadata({
-    title: "My Static Site & Blog",
-    description: "It's about saying »Hello« to the World.",
+    title: "title",
+    description: "description",
     generator: "Metalsmith",
     url: "http://www.metalsmith.io/"
   })
