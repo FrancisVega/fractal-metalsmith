@@ -1,11 +1,11 @@
-{% extends '../design/components/page/page.twig' %}
+{% extends '../flat-components/page.twig' %}
 
 {% block header %}
-    {% include '../design/components/navigation/navigation.twig' %}
+    {% include '../flat-components/navigation.twig' %}
 {% endblock %}
 
 {% block body %}
-    {% include '../design/components/post/post.twig' with {
+    {% include '../flat-components/post.twig' with {
         published: date,
         title: title,
         contents: contents

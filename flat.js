@@ -1,18 +1,25 @@
 const fs = require('fs-extra');
 const path = require('path');
-const recursive = require('recursive-readdir');
 
-const PATH = './design/components';
-const DEST = './flat-components';
+const SRC = './design/components';
+const DST = './flat-components';
 
-recursive('./design/components', ['!*.twig'], (err, files) => {
+const walkSync = (dir, filelist = []) => {
+  fs.readdirSync(dir).forEach(file => {
+    filelist = fs.statSync(path.join(dir, file)).isDirectory()
+      ? walkSync(path.join(dir, file), filelist)
+      : filelist.concat(path.join(dir, file));
+  });
+return filelist;
+}
 
-  files.map(file => {
-    console.log(file);
-    fs.copySync(file, `${DEST}/${path.basename(file)}`);
+const sourceCompos = walkSync(SRC)
+  // Filter just twigs files
+  .filter( file => path.extname(file) == ".twig")
+  // Copy, Modify and Write
+  .map( file => {
+    fs.copySync(file, `${DST}/${path.basename(file)}`);
+    const content = fs.readFileSync(file, 'utf8');
+    const contentModified = content.replace(/{% include '@(\w+)/g, "{% include '$1.twig");
+    fs.writeFileSync(DST + "/" + path.basename(file), contentModified);
   })
-
-
-})
-
-
