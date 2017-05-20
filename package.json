@@ -2,7 +2,8 @@
   "name": "fractal-metalsmith",
   "version": "0.1.0",
   "scripts": {
-    "start": "node metalsmith.js"
+    "start": "node metalsmith.js",
+    "build": "node flat.js && node metalsmith.js"
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.0",
