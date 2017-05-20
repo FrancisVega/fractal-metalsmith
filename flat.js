@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const SRC = './design/components';
+const SRC = './fractal/components';
 const DST = './flat-components';
 
 const walkSync = (dir, filelist = []) => {
